@@ -89,7 +89,7 @@ def run_igsea():
     genes_info_ = pd.read_csv(genes_info, sep='\t', index_col=0)
     for i in cell:
         print('cell:', i)
-        j = r'lincs\result_'+i+'.txt'
+        j = r'lincs\profile_'+i+'.txt'
         profile = os.path.join(root, j)
         profile_ = pd.read_csv(profile, sep='\t', index_col=0)
 
