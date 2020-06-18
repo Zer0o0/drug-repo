@@ -3,7 +3,7 @@
 HGNC_NOW=[]
 HGNC_BF=[]
 
-with open(r'data/hgnc-biomart.txt','r') as f:
+with open(r'data\hgnc-biomart.txt','r') as f:
     for line in f:
         line=line.strip().split('\t')
         try:
