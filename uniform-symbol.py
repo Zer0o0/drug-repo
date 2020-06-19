@@ -1,11 +1,11 @@
 # uniform gene symbols
 #
-HGNC_NOW=[]
-HGNC_BF=[]
+HGNC_NOW = []
+HGNC_BF = []
 
-with open(r'data\hgnc-biomart.txt','r') as f:
+with open(r'data\hgnc-biomart.txt', 'r') as f:
     for line in f:
-        line=line.strip().split('\t')
+        line = line.strip().split('\t')
         try:
             HGNC_BF.append(line[4])
             HGNC_NOW.append(line[2])
@@ -14,15 +14,10 @@ with open(r'data\hgnc-biomart.txt','r') as f:
 
 
 def uniform_gene_symbol(gs):
-    gs=str(gs)
+    gs = str(gs)
     if gs in HGNC_NOW:
         return gs
     elif gs in HGNC_BF:
-        return HGNC_NOW[HGNC_BF.index(i)]
+        return HGNC_NOW[HGNC_BF.index(gs)]
     else:
         print("the gene symbol is not exist!")
-
-
-if __name__=='__main__':
-    pass
-
