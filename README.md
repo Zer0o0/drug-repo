@@ -7,6 +7,8 @@ The framework of computational drug repositioning is an integration of molecular
 3. screening drugs by their proximity to disease-related genes on the interactome network;
 4. filtering the screened drugs based on their correlation with gene expression profiles.
 
-![](images/figure1.jpg)
+<div align="center">   
+<img src="images/figure1.jpg" width = "280" height = "380" alt="fig1" align=center />
+</div>
 
 Relevant [paper]() has been published in Bioinformatics.
