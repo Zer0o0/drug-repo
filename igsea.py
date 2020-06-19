@@ -25,7 +25,6 @@ import os
 print(__doc__)
 
 
-
 usage = 'usage: %prog [options] -h<--help> -g<--geneset> -o<--output> -c<--cell>'
 version = '%prog 1.0'
 optParser = OptionParser(usage=usage, version=version)
@@ -41,7 +40,7 @@ optParser.add_option('-c', '--cell', action='store', type='string', dest='CELL',
 (options, args) = optParser.parse_args()
 
 grp = options.GENESET              # disease genes
-outdir = options.OUTDIR            # output directory 
+outdir = options.OUTDIR            # output directory
 cell = options.CELL.upper()        # cell lines
 try:
     cell = cell.split(',')
@@ -63,13 +62,14 @@ print('cell lines:', cell)
 print()
 
 cwd = os.getcwd()                         # work directory
-outdir = os.path.join(cwd, outdir)        # output directory 
-root = sys.path[0]                        # 
+outdir = os.path.join(cwd, outdir)        # output directory
+root = sys.path[0]                        #
 
 try:
     os.mkdir(outdir)
 except:
     pass
+
 
 def gsea(grp, rnk, dir):  # gene set enrichment analysis
     jar = os.path.join(root, 'gsea-3.0.jar')
@@ -177,4 +177,3 @@ if __name__ == '__main__':
     except:
         print('check the session environment please!')
         exit(1)
-
