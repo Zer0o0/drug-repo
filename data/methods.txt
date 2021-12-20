@@ -1,0 +1,17 @@
+AD-related genes (561):
+KEGG (hsa05010), https://www.genome.jp/kegg/
+OMIM ('Alzheimer disease'), https://www.ncbi.nlm.nih.gov/omim
+PheGenI (pvalue<5e-8), https://www.ncbi.nlm.nih.gov/gap/phegeni
+
+DrugBank (version 5.1.3):
+Those drugs have no targets are filtered out.
+
+PPIN:
+STRING (version 11.0), https://cn.string-db.org/
+PINA (latest), https://omics.bjcancer.org/pina2012/
+HuRI, http://www.interactome-atlas.org/
+
+LINCS:
+GEO accession: GSE70138 and GSE92742
+Here we collected those perturbational datasets of 10174 Best Inferred Genes, including 978 landmark genes and 9196 inferred genes.
+Also those items without clear dose and time information were filtered out, then the cell lines related to the nervous system were kept (mainly NEU & NPC).
