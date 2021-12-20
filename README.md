@@ -11,4 +11,4 @@ The framework of computational drug repositioning is an integration of molecular
 <img src="images/figure1.jpg" width = "280" height = "380" alt="fig1" align=center />
 </div>
 
-Relevant [paper]() has been published in Bioinformatics.
+Relevant [paper](https://academic.oup.com/bioinformatics/article/36/17/4626/5855131) has been published in Bioinformatics.
