@@ -1,4 +1,4 @@
-# uniform gene symbols
+# uniform human's gene symbols
 #
 HGNC_NOW = []
 HGNC_BF = []
@@ -14,10 +14,11 @@ with open(r'data\hgnc-biomart.txt', 'r') as f:
 
 
 def uniform_gene_symbol(gs):
+    #gs: provide gene symbol to be transformed
     gs = str(gs)
     if gs in HGNC_NOW:
         return gs
     elif gs in HGNC_BF:
         return HGNC_NOW[HGNC_BF.index(gs)]
     else:
-        print("the gene symbol is not exist!")
+        print("Gene symbol is not exist!")

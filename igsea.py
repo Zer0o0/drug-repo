@@ -30,8 +30,8 @@ version = '%prog 1.0'
 optParser = OptionParser(usage=usage, version=version)
 optParser.add_option('-g', '--geneset', action='store', type='string', dest='GENESET',
                      help='risk geneset of the target disease')
-optParser.add_option('-o', '--output', action='store', type='string', dest='OUTDIR',
-                     help='write output to directory',
+optParser.add_option('-o', '--outdir', action='store', type='string', dest='OUTDIR',
+                     help='write output to the directory',
                      default='igsea')
 optParser.add_option('-c', '--cell', action='store', type='string', dest='CELL',
                      help='choose cell lines',
@@ -41,11 +41,8 @@ optParser.add_option('-c', '--cell', action='store', type='string', dest='CELL',
 
 grp = options.GENESET              # disease genes
 outdir = options.OUTDIR            # output directory
-cell = options.CELL.upper()        # cell lines
-try:
-    cell = cell.split(',')
-except:
-    cell = [cell]
+cell = options.CELL.upper().split(',')        # cell lines
+
 CELLS = ['A375', 'A549', 'HA1E', 'HCC515', 'HEPG2',
          'HT29', 'MCF7', 'PC3', 'VCAP', 'NEU', 'NPC']
 
@@ -68,7 +65,7 @@ root = sys.path[0]                        #
 try:
     os.mkdir(outdir)
 except:
-    pass
+    print("The output directory is already exist!")
 
 
 def gsea(grp, rnk, dir):  # gene set enrichment analysis
@@ -133,7 +130,7 @@ def get_value(html):  # extract result
 
 def run_accessation():
     target = grp+'.html'
-    ann = os.path.join(root, r'data\lincs\pert_info.txt')
+    ann = os.path.join(root, r'data\lincs\perts_info.txt')
     ann_ = pd.read_csv(ann, sep='\t', index_col=0)
 
     def searchFile(root, target):
@@ -168,12 +165,12 @@ def run_accessation():
 
 if __name__ == '__main__':
     try:
-        print('calculating...')
+        print('Calculating...')
         start = time.time()
         run_igsea()
         run_accessation()
         end = time.time()
-        print('finish，time consuming/min：', (end-start)//60)
+        print('Finish，time consuming/min: ', (end-start)//60)
     except:
-        print('check the session environment please!')
+        print('Check the session environment please!')
         exit(1)
